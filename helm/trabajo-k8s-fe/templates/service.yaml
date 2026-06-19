@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "trabajo-k8s-fe.fullname" . }}
+  labels:
+    {{- include "trabajo-k8s-fe.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "trabajo-k8s-fe.selectorLabels" . | nindent 4 }}
