@@ -1,15 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-
 metadata:
-  name: frontend-bookinglite
+  name: frontend
   namespace: argocd
 
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/sebasvelasco353/trabajo-K8S-FE.git
+    repoURL: https://github.com/TU_USUARIO/trabajo-K8S-FE.git
     targetRevision: dev
     path: helm/trabajo-k8s-fe
 
@@ -21,5 +20,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
