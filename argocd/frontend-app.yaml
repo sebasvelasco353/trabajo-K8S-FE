@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/sebasvelasco353/trabajo-K8S-FE.git
-    targetRevision: dev
+    targetRevision: feature/gitops-infra
     path: helm/trabajo-k8s-fe
 
   destination:
