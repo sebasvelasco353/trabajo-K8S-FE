@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: booking-service
+  namespace: argocd
+
+spec:
+
+  project: default
+
+  source:
+    repoURL: https://github.com/sebasvelasco353/trabajo-K8S-FE.git
+    targetRevision: feature/gitops-infra
+    path: helm/booking-service
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: bookinglite-dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
