@@ -1,0 +1,27 @@
+info:
+  name: Editar una reserva
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: http://localhost:3000/api/reservations/557
+  headers:
+    - name: Authorization
+      value: bearer uhsuvugsdvgusguv
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": "qgwrgwegewg",
+        "start_date": "Fri Jun 19 2026 22:27:27 GMT-0500 (hora estándar de Colombia)",
+        "end_date": "Fri Jun 19 2026 24:27:27 GMT-0500 (hora estándar de Colombia)",
+        "location_id": "por ahiiiiiiiiiii"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

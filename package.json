@@ -1,30 +1,37 @@
 {
-  "name": "trabajo-k8s-fe",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+  "name": "trabajo-k8s",
+  "version": "1.0.0",
+  "description": "**Descripción:** El trabajo involucra la creación de microservicios individualmente desplegables, utilizando contenedores Docker, un orquestador de contenedores como Kubernetes y herramientas como Helm para la gestión de paquetes y configuraciones.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch src --exec ts-node src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebasvelasco353/trabajo-K8S.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sebasvelasco353/trabajo-K8S/issues"
+  },
+  "homepage": "https://github.com/sebasvelasco353/trabajo-K8S#readme",
   "dependencies": {
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "express": "^5.2.1"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/node": "^24.12.3",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.3.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.6.0",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12"
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.3",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
   }
 }

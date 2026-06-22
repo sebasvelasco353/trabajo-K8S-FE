@@ -1,0 +1,27 @@
+info:
+  name: New Reservation
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: http://localhost:3000/api/reservations/
+  headers:
+    - name: Authorization
+      value: bearer new token here
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": "qgwrgwegewg",
+        "start_date": "Fri Jun 19 2026 22:27:27 GMT-0500 (hora estándar de Colombia)",
+        "end_date": "Fri Jun 19 2026 24:27:27 GMT-0500 (hora estándar de Colombia)",
+        "location_id": "here"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
