@@ -32,3 +32,6 @@ de CI/CD para automatizar el proceso de construcción y despliegue del microserv
 - Luis Alberto Pachon
 - Moises Plata Florez
 - Sebastian Velasco
+
+
+Video: https://unisabanaedu-my.sharepoint.com/:v:/g/personal/camilomorro_unisabana_edu_co/IQAk-SNbyliETaHSWjh-h6P2AeqeH7EZ6cW29qcgndqhChw?e=3K2snR
