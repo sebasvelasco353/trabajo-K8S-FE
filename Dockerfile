@@ -1,17 +1,27 @@
 # Build
 FROM node:22-alpine AS builder
+
 WORKDIR /app
 
 COPY package*.json ./
 RUN npm ci
 
 COPY . .
+
 RUN npm run build
 
 # Production
-FROM nginx:stable-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+FROM node:22-alpine
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Copy compiled application
+COPY --from=builder /app/dist ./dist
+
+# Expose application port
+EXPOSE 3000
+
+CMD ["node", "dist/app.js"]
